@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Kosení Pražáků</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/style.css">
+</head>
+<body>
+
+<div id="menu">
+    <ul>
+        <li>ChiliChili</li>
+        <li>
+            <a href="kontakt.html">Kontakt</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Komentar  -->
+
+<div class="content">
+    <img src="images/koseni.jpg"
+         alt="Koseni obrazek"
+         title="Title pro koseni"
+    >
+
+    <h1>Kosení Pražáků</h1>
+    <div>
+        Nedávno mi bývalý spolužák tvrdil, že by se v Praze ukousal nudou. Prý tu lidi jen sedí v práci nebo v zácpě na
+        magistrále. To je samozřejmě nesmysl, protože v naší Matičce měst se dá zažít úplně všechno. Třeba vyrazit za
+        kuropění žnout otavu.
+    </div>
+    <div class="social">
+        <b>Autor:</b>
+        <a href="http://cilichili.cz/autor/jiri-holubec/"
+           title="Odkaz na profil"
+           target="_blank">Jiri</a>
+    </div>
+    <div>
+        <p>Je půl páté ráno… <i>Pardon</i>, na chvíli jsem usnul za chůze, protože, no víte, je půl páté ráno. V tuhle
+            zvláštní dobu, kdy už není noc, ale den ještě nezačal, je při vědomí jen málokdo a máloco. Ve Stromovce,
+            kterou
+            v polospánku klopýtám, není kromě mě ani noha. Vzhůru jsou jen ptáci, kteří ovšem řvou jak zjednaní, a
+            muchničky, které jsou celé nadšené, že jim jde snídaně. Než se vzpamatuji, mám nohy dožrané jako sirota. Asi
+            bude pršet.
+        </p>
+        <p>Když podlezu viadukt a dojdu k můstku na Císařský ostrov, zjišťuji, že tu přece jen ještě jedna živá duše
+            bdí.
+            Pořadatelka pátého ročníku Kosení Stromovky se mi představuje jako Bára a jelikož jsme tu zatím sami, dáváme
+            se
+            do řeči. Celá tahle zvláštní akce prý odstartovala před pěti lety, když za Bárou – šéfovou údržby Stromovky
+            –
+            přišla kamarádka Petra a začala se vyptávat, proč se tráva v parku seče motorovými sekačkami a ne kosou.
+            „Nejdřív jsem se jí trochu vysmála,“ vypráví Bára a tluče se po nohou doštípaných dotěrnými muňkami.
+            „Nedovedla
+            jsem si představit, že bych naše zaměstnance hnala ve tři ráno do Stromovky s kosou. A taky by asi
+            návštěvníci
+            nedávali, kdyby tu všude leželo seno, že jo. Kosa je sice kosa, ale sekačka po sobě trávu dokáže i sebrat a
+            dá
+            se s ní sekat i v poledne. No ale pak jsem se dozvěděla, že Petra je z party lidí, co jezdí kosit
+            pravidelně.
+            Nakonec jsme vymysleli, že necháme trávu na nějaké loučce stranou růst a aspoň jednou do roka uspořádáme ve
+            Stromovce sečení.“
+        </p>
+    </div>
+
+    <div style="margin-bottom: 100px">
+        <h2>Diskuse <span class="pocitadlo">(0)</span></h2>
+        <div style="display: none;" id="dekujeme">
+            Dekujeme za zpravu
+        </div>
+        <div>
+            <form id="formular">
+                <div>
+                    <label for="jmeno">Jmeno:</label>
+                    <input name="jmeno"
+                           id="jmeno"
+                           placeholder="Vypln jmeno">
+                </div>
+                <div>
+                    <label>Dotaz
+                        <input type="radio" name="typ" checked>
+                    </label>
+                    <label>Komentar
+                        <input type="radio" name="typ">
+                    </label>
+                </div>
+                <div>
+                    <label for="text">Text:</label>
+                    <textarea
+                            id="text"
+                            name="text"
+                            placeholder="Sem neco napis"
+                            rows="6"
+                            cols="40"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Odeslat" onclick="return odeslani()">
+                </div>
+            </form>
+
+            <div id="komentare"></div>
+
+            <script type="application/javascript">
+                i = 0;
+
+                function odeslani() {
+                    jmeno = document.getElementById('jmeno');
+                    text = document.getElementById('text');
+                    pocitadlo = document.getElementsByClassName('pocitadlo')[0];
+                    komentare = document.getElementById('komentare');
+
+                    if (jmeno.value === '') {
+                        alert('Vypln jmeno');
+
+                        return false;
+                    }
+                    // } else {
+                    //     alert('Vypln jmeno 1');
+                    //
+                    //     return false;
+                    // }
+
+                    komentar = '<div><b>' + jmeno.value + '</b> '
+                        + text.value + '</div><hr>';
+
+                    komentare.innerHTML = komentare.innerHTML
+                        + komentar;
+
+                    pocitadlo.innerHTML = '<i>(' + (++i) + ')</i>';
+
+                    jmeno.value = '';
+                    text.value = '';
+
+                    document.getElementById('dekujeme').style.display = 'block';
+
+                    return false;
+                }
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+</html>

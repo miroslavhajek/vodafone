@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ Komentar v CSS
+ na vice radku
+ */
+
+body {
+    font-family: "Arial";
+    background-color: lightgray;
+}
+
+h1 {
+    font-family: "Times New Roman";
+    color: black;
+    margin: 16px 0;
+}
+
+p {
+    margin: 12px 0;
+}
+
+#menu {
+    background-color: white;
+    border-bottom: 1px solid darkslategray;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+#menu img {
+    margin-left: 6px;
+}
+
+#menu ul {
+    margin: 0 0 12px 12px;
+}
+
+#menu li {
+    display: inline;
+    font-size: 22px;
+    padding-right: 20px;
+}
+
+#menu a {
+    color: red;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    text-decoration: underline;
+}
+
+#menu li:first-child {
+    background: url(../images/logo.png) no-repeat;
+    background-size: 24px 24px;
+    padding-left: 38px;
+}
+
+/*#menu li:nth-child(2) {*/
+    /*border: 1px solid blue;*/
+/*}*/
+
+div.social {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+    margin: 12px 0 0 0;
+}
+
+div.content {
+    margin: 0 12px;
+}
+
+.content img {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .content img {
+        width: 100%;
+        max-width: none;
+    }
+
+    #menu li {
+        display: block;
+    }
+}
+
+@media print {
+    body {
+        color: red;
+    }
+}
