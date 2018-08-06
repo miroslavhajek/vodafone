@@ -6,6 +6,9 @@
     <link rel="stylesheet"
           type="text/css"
           href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
 
@@ -102,43 +105,6 @@
             </form>
 
             <div id="komentare"></div>
-
-            <script type="application/javascript">
-                i = 0;
-
-                function odeslani() {
-                    jmeno = document.getElementById('jmeno');
-                    text = document.getElementById('text');
-                    pocitadlo = document.getElementsByClassName('pocitadlo')[0];
-                    komentare = document.getElementById('komentare');
-
-                    if (jmeno.value === '') {
-                        alert('Vypln jmeno');
-
-                        return false;
-                    }
-                    // } else {
-                    //     alert('Vypln jmeno 1');
-                    //
-                    //     return false;
-                    // }
-
-                    komentar = '<div><b>' + jmeno.value + '</b> '
-                        + text.value + '</div><hr>';
-
-                    komentare.innerHTML = komentare.innerHTML
-                        + komentar;
-
-                    pocitadlo.innerHTML = '<i>(' + (++i) + ')</i>';
-
-                    jmeno.value = '';
-                    text.value = '';
-
-                    document.getElementById('dekujeme').style.display = 'block';
-
-                    return false;
-                }
-            </script>
         </div>
     </div>
 </div>
